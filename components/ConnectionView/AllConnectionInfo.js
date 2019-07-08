@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {View, TextInput, Text, Button, StyleSheet} from 'react-native';
+import {View, TextInput, Text, Button, StyleSheet, TouchableWithoutFeedback} from 'react-native';
+import DismissKeyboard from 'dismissKeyboard';
 
 
 // Components
@@ -23,6 +24,8 @@ export default class AllConnectionInfo extends Component {
 
   render() {
     return (
+
+      <TouchableWithoutFeedback onPress={()=>{DismissKeyboard()}}>
       <View style={this.props.boxStyle}>
 
         <TextInput
@@ -138,6 +141,7 @@ export default class AllConnectionInfo extends Component {
           <ItemSeperator />
 
       </View>
+      </TouchableWithoutFeedback>
     );
   }
 }

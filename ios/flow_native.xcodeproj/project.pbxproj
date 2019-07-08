@@ -17,6 +17,7 @@
 		0566721622AD8642009C6098 /* Lora-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0566721222AD8642009C6098 /* Lora-Italic.ttf */; };
 		0566721722AD8642009C6098 /* Lora-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0566721322AD8642009C6098 /* Lora-BoldItalic.ttf */; };
 		0566721822AD8642009C6098 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0566721422AD8642009C6098 /* Lora-Bold.ttf */; };
+		05B336CD22D2AD6E00EAF9AC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B336CC22D2AD6E00EAF9AC /* StoreKit.framework */; };
 		05FAC9C622A6DCD600EF5F0F /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FAC9BD22A6DC1F00EF5F0F /* libReactNativeNavigation.a */; };
 		0987F28F6F7B4F4183500009 /* libRNCSlider.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6EF2679C83481CAED02E47 /* libRNCSlider.a */; };
 		11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
@@ -426,6 +427,7 @@
 		0566721222AD8642009C6098 /* Lora-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Italic.ttf"; sourceTree = "<group>"; };
 		0566721322AD8642009C6098 /* Lora-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0566721422AD8642009C6098 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
+		05B336CC22D2AD6E00EAF9AC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		07677073CF4048C186CF5C1A /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		0A23FEFAAF5F46E8A1EFD012 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		0BE82E29EA794667901BB639 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
+				05B336CD22D2AD6E00EAF9AC /* StoreKit.framework in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				05FAC9C622A6DCD600EF5F0F /* libReactNativeNavigation.a in Frameworks */,
 				46331844691C4B6F848DA9A6 /* libRNGestureHandler.a in Frameworks */,
@@ -761,6 +764,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05B336CC22D2AD6E00EAF9AC /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
@@ -950,6 +954,11 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = KS4CX4C47K;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;

@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, TextInput, Button, Image, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button, Image, TouchableOpacity, TouchableWithoutFeedback} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import { BACKEND_URL } from 'react-native-dotenv';
+import DismissKeyboard from 'dismissKeyboard';
 
 
 export default class AuthView extends Component {
@@ -146,29 +148,32 @@ export default class AuthView extends Component {
 
   render() {
     return (
+      <TouchableWithoutFeedback onPress={()=>{DismissKeyboard()}}>
       <View style={styles.container}>
 
       { !this.state.register &&
       <View style={styles.container}>
 
-              <Image
-              source={require('./basicLogo.png')}
-              style={styles.logo}/>
+      <Image
+      source={require('./basicLogo.png')}
+      style={styles.logo}/>
 
-
+        <View style={{marginTop: 150,flex: 1, alignItems: 'center',justifyContent: 'flex-start'}}>
               <TextInput
                 value={this.state.username}
                 onChangeText={(username) => this.setState({ username })}
                 placeholder={'Username'}
                 style={styles.input}
-              />
+              ></TextInput>
+
               <TextInput
                 value={this.state.password}
                 onChangeText={(password) => this.setState({ password })}
                 placeholder={'Password'}
                 secureTextEntry={true}
                 style={styles.input}
-              />
+              ></TextInput>
+
               {this.state.logError && <Text>{this.state.logError}</Text> }
               <TouchableOpacity
                 style={styles.loginButton}
@@ -189,36 +194,45 @@ export default class AuthView extends Component {
                   passwordConfirm: ""
                   })}}
               />
+            </View>
+
+              <Image
+              source={require('./basicLogo.png')}
+              style={styles.logo}/>
+
       </View>
     }
 
     {this.state.register &&
       <View style={styles.container}>
 
-              <Image
-              source={require('./basicLogo.png')}
-              style={styles.logo}/>
+      <Image
+      source={require('./basicLogo.png')}
+      style={styles.logo}/>
 
               <TextInput
                 value={this.state.username}
                 onChangeText={(username) => this.setState({ username })}
                 placeholder={'Username'}
                 style={styles.input}
-              />
+              ></TextInput>
+
               <TextInput
                 value={this.state.password}
                 onChangeText={(password) => this.setState({ password })}
                 placeholder={'Password'}
                 secureTextEntry={true}
                 style={styles.input}
-              />
+              ></TextInput>
+
               <TextInput
                 value={this.state.passwordConfirm}
                 onChangeText={(passwordConfirm) => this.setState({ passwordConfirm })}
                 placeholder={'Confirm Password'}
                 secureTextEntry={true}
                 style={styles.input}
-              />
+              ></TextInput>
+
               {this.state.regError && <Text>{this.state.regError}</Text> }
               <TouchableOpacity
                 style={styles.loginButton}
@@ -239,9 +253,12 @@ export default class AuthView extends Component {
                   passwordConfirm: ""
                   })}}
               />
+
       </View>
     }
       </View>
+      </TouchableWithoutFeedback>
+
     );
   }
 }
@@ -293,7 +310,6 @@ const styles = StyleSheet.create({
     height: 400,
     marginTop: 50,
     marginBottom: -30,
-    alignSelf: "center",
   }
 
 });
