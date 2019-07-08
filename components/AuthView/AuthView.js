@@ -158,7 +158,6 @@ export default class AuthView extends Component {
       source={require('./basicLogo.png')}
       style={styles.logo}/>
 
-        <View style={{marginTop: 150,flex: 1, alignItems: 'center',justifyContent: 'flex-start'}}>
               <TextInput
                 value={this.state.username}
                 onChangeText={(username) => this.setState({ username })}
@@ -196,11 +195,6 @@ export default class AuthView extends Component {
               />
             </View>
 
-              <Image
-              source={require('./basicLogo.png')}
-              style={styles.logo}/>
-
-      </View>
     }
 
     {this.state.register &&
@@ -306,10 +300,13 @@ const styles = StyleSheet.create({
   },
 
   logo: {
+    borderWidth: 15,
+    borderColor: "transparent",
     width: 400,
     height: 400,
     marginTop: 50,
     marginBottom: -30,
+    alignSelf: "center"
   }
 
 });
